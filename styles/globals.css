@@ -6,25 +6,114 @@ html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Inter', sans-serif;
+  scrollbar-color: #1B3E79 #A9BBDA;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
 }
 
-a {
-  color: inherit;
-  text-decoration: none;
+body::-webkit-scrollbar {
+  width: 0.5em;
 }
 
-* {
-  box-sizing: border-box;
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: #A9BBDA;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
+body::-webkit-scrollbar-thumb {
+  background-color: #1B3E79;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-style: normal;
+  font-weight: 500;
+}
+
+a, p {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+h1 {
+  font-size: 48px;
+  line-height: 58px;
+}
+
+h2 {
+  font-size: 32px;
+  line-height: 42px;
+}
+
+h3 {
+  font-size: 24px;
+  line-height: 32px;
+}
+
+h4 {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+h5 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+h6 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 32px;
+    line-height: 42px;
   }
-  body {
-    color: white;
-    background: black;
+  h2 {
+    font-size: 24px;
+    line-height: 32px;
   }
+  h3 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+  h4 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  h5 {
+    font-size: 14px;
+    line-height: 20px;
+  }
+  h6 {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  a, p {
+    font-size: 10px;
+    line-height: 16px;
+  }
+}
+
+/* UNDERLINE ANIMATION */
+.un {
+  display: inline-block;
+  padding-bottom: 1px;
+  background-image: linear-gradient(#FFF, #FFF);
+  background-position: 50% 80%; /*OR bottom left*/
+  background-size: 0% 0.5px;
+  background-repeat: no-repeat;
+  transition:
+    background-size 0.1s,
+    background-position 0.3s; /*change after the size immediately*/
+}
+
+.un:hover {
+  background-size: 100% 1px;
+  background-position: 50% 100%;
 }

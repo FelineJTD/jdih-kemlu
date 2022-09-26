@@ -101,14 +101,14 @@ export default function Navbar() {
                     <div className='absolute -left-4 top-0 w-[calc(200%+12px)] min-h-[48px] max-h-0 hover:max-h-fit duration-500 z-40 overflow-hidden flex flex-col'>
                       <Link href={link.href}>
                         <a className='left-0 top-0 mt-[7px] mb-0 mx-4'>
-                          <p className='un text-sm'>{link.name}</p>
+                          <p className='unWhite text-sm'>{link.name}</p>
                         </a>
                       </Link>
                       <div className='flex flex-col space-y-2 py-4 px-4 bg-primary-700 rounded-md'>
                         { link.child.map((child, idx) => {
                             return (
                               <Link key={idx} href={child.href? child.href : (link.href + '/' + child.name)}>
-                                <a><p className='un text-sm'>{child.name}</p></a>
+                                <a><p className='unWhite text-sm'>{child.name}</p></a>
                               </Link>
                             )
                         })}
@@ -119,7 +119,7 @@ export default function Navbar() {
               } else {
                 return (
                   <Link href={link.href} key={index}>
-                    <a className='font-medium un duration-300'>{link.name}</a>
+                    <a className='font-medium unWhite duration-300'>{link.name}</a>
                   </Link>
                 )
               }

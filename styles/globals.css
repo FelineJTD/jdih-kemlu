@@ -101,10 +101,9 @@ h6 {
 }
 
 /* UNDERLINE ANIMATION */
-.un {
+.un, .unWhite {
   display: inline-block;
   padding-bottom: 1px;
-  background-image: linear-gradient(#FFF, #FFF);
   background-position: 50% 80%;
   background-size: 0% 0.5px;
   background-repeat: no-repeat;
@@ -113,7 +112,11 @@ h6 {
     background-position 0.3s;
 }
 
-.un:hover {
+.unWhite:hover, .un:hover {
   background-size: 100% 1px;
   background-position: 50% 100%;
+}
+
+.unWhite {
+  background-image: linear-gradient(#FFF, #FFF);
 }

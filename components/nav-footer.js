@@ -23,6 +23,7 @@ export default function Footer() {
             href='https://goo.gl/maps/HaHrxxxT6kNnSRfN6' 
             target='_blank' 
             rel='noopener noreferrer'
+            className='unWhite'
           >
             <p className='font-medium my-1'>Jakarta Pusat, Indonesia</p>
             <p className='mb-6'>Jalan Taman Pejambon No. 6</p>
@@ -33,7 +34,7 @@ export default function Footer() {
             target='_blank'
             rel='noopener noreferrer'
           >
-            <p className='my-1'><span className='font-medium'>baghukum@kemlu.go.id</span></p>
+            <p className='my-1'><span className='font-medium unWhite'>baghukum@kemlu.go.id</span></p>
           </a>
           <p className='mb-1'>021 - 3441508 ext 5558</p>
           <div className='flex space-x-2'>

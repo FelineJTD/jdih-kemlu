@@ -9,9 +9,8 @@ import IconInstagram from '../assets/icons/social/icon-instagram';
 import IconFacebook from '../assets/icons/social/icon-facebook';
 
 export default function Footer() {
-  const copyrightText = '© Braga Technologies 2022';
   return (
-    <footer className='flex bg-primary-700 text-white defaultPadding w-full selection:bg-secondary-400 selection:text-primary-500 h-fit relative'>
+    <footer className='flex flex-col lg:flex-row bg-primary-700 text-white defaultPadding w-full selection:bg-secondary-400 selection:text-primary-500 h-fit relative'>
       <div className='w-3/12'>
         <Image src='/logo-kemlu.png' alt='Logo Kemlu' width={60} height={60} />
         <h3 className='mb-8'>

@@ -85,12 +85,12 @@ export default function Home() {
 
       <main>
         {/* MAIN HERO SECTION */}
-        <section className='bg-[url("/images/homepage/img-background-hero.png")] h-[calc(100vh-60px)] bg-cover bg-center bg-no-repeat relative text-white'>
+        <section className='bg-[url("/images/homepage/img-background-hero.png")] h-[calc(100vh-60px)] bg-cover bg-center bg-no-repeat relative text-white text-center'>
           {/* overlay */}
           <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-b from-primary-700/90 to-primary-700/40 z-0' aria-hidden />
           {/* content */}
-          <div className='h-full w-full flex flex-col items-center justify-center relative'>
-            <h1 className='uppercase text-center mb-7'>
+          <div className='defaultPaddingX h-full w-full flex flex-col items-center justify-center relative'>
+            <h1 className='uppercase mb-7'>
               Jaringan Dokumentasi dan Informasi Hukum<br />
               Kementrian Luar Negeri
             </h1>
@@ -141,7 +141,7 @@ export default function Home() {
         <section className='defaultPadding'>
           <Animate before='opacity-0 translate-y-4' after='opacity-100 translate-y-0' className='duration-300'>
             <h2 className='uppercase text-center mb-10'>Akses Cepat</h2>
-            <div className='flex justify-between space-x-4'>
+            <div className='flex flex-col md:flex-row justify-between md:space-x-4'>
               { AksesCepat.map((item, index) => {
                   return (
                     <Link href={item.href} key={index}>
@@ -165,7 +165,7 @@ export default function Home() {
           {/* content */}
           <Animate before='opacity-0 translate-y-4' after='opacity-100 translate-y-0' className='duration-300 relative z-10'>
             <h2 className='uppercase text-center mb-10'>Tema Dokumen</h2>
-            <div className='flex justify-between space-x-4'>
+            <div className='flex flex-wrap justify-between gap-4'>
               { TemaDokumen.map((item, index) => {
                   return (
                     <Link href={item.href} key={index}>
@@ -197,7 +197,7 @@ export default function Home() {
 
             </Animate>
             <div>
-              
+
             </div>
           </div>
         </section>
@@ -206,7 +206,7 @@ export default function Home() {
         <section className='defaultPadding bg-primary-700 text-white'>
           <Animate before='opacity-0 translate-y-4' after='opacity-100 translate-y-0' className='duration-300'>
             <h2 className='uppercase text-center mb-10'>Tautan Eksternal</h2>
-            <div className='flex justify-between space-x-4'>
+            <div className='flex flex-col md:flex-row justify-between gap-4'>
               { TautanEksternal.map((item, index) => {
                   return (
                     <Link href={item.href} key={index}>

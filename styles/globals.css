@@ -74,8 +74,8 @@ a, p, button {
 
 @media screen and (max-width: 768px) {
   h1 {
-    font-size: 32px;
-    line-height: 42px;
+    font-size: 16px;
+    line-height: 24px;
   }
   h2 {
     font-size: 24px;
@@ -105,7 +105,7 @@ a, p, button {
 
 /* PADDING */
 .defaultPaddingX {
-  @apply px-20 xl:px-[10%];
+  @apply px-6 lg:px-20 xl:px-[10%];
 }
 
 .defaultPaddingY {

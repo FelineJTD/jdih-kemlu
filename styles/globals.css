@@ -25,13 +25,13 @@ body::-webkit-scrollbar-thumb {
   background-color: #1B3E79;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2 {
   font-family: 'Josefin Sans', sans-serif;
   font-style: normal;
   font-weight: 500;
 }
 
-a, p {
+h3, h4, h5, h6, a, p {
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;
@@ -98,6 +98,18 @@ h6 {
     font-size: 10px;
     line-height: 16px;
   }
+}
+
+.defaultPaddingX {
+  @apply px-20 xl:px-[10%];
+}
+
+.defaultPaddingY {
+  @apply py-14;
+}
+
+.defaultPadding {
+  @apply defaultPaddingX defaultPaddingY;
 }
 
 /* UNDERLINE ANIMATION */

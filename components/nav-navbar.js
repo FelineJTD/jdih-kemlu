@@ -1,29 +1,8 @@
 import Link from 'next/link'
 import { useEffect, useState } from 'react';
+import { Routes } from '../config/cfg-routes';
 
 export default function Navbar() {
-  const Links = [
-    { name: 'Beranda', href: '/', child: [] },
-    { name: 'Tentang Kami', href: '/tentang-kami', child: [] },
-    { name: 'Dokumen Hukum', href: '/dokumen', child: [
-      { name: 'UUD 1945' },
-      { name: 'UU/Perppu' },
-      { name: 'Peraturan Pemerintah (PP)' },
-      { name: 'Peraturan Presiden (Perpres)' },
-      { name: 'Keputusan Presiden (Keppres)' },
-      { name: 'Permenlu' },
-      { name: 'Kepmenlu' },
-      { name: 'MoU' },
-      { name: 'PKS' },
-      { name: 'Putusan MA/MK' },
-    ] },
-    { name: 'Berita Terkini', href: '/berita', child: [
-      { name: 'Berita', href: '/berita' },
-      { name: 'Foto Kegiatan', href: '/foto' },
-      { name: 'Infografis', href: '/infografis' },
-    ] },
-  ]
-
   const [isMobileNavOpen, setIsMobileNavOpen] = useState(false);
 
   const closeMobileNav = () => {
@@ -93,21 +72,21 @@ export default function Navbar() {
       {/* DESKTOP NAV */}
       <nav id='nav' className='flex items-center justify-between w-full px-6 py-3 bg-primary-700 text-white sticky top-0 z-50 duration-200 selection:bg-secondary-400 selection:text-primary-500 h-[60px]'>
         <div className='flex h-full items-center space-x-6'>
-          { Links.map((link, index) => {
-              if (link.child.length > 0) {
+          { Routes.map((route, index) => {
+              if (route.children.length > 0) {
                 return (
                   <div key={index} className='relative h-full'>
-                    <p className='opacity-0 text-sm relative z-10'>{link.name}</p>
+                    <p className='opacity-0 text-sm relative z-10'>{route.name}</p>
                     <div className='absolute -left-4 top-0 w-[calc(200%+12px)] min-h-[48px] max-h-0 hover:max-h-fit duration-500 z-40 overflow-hidden flex flex-col'>
-                      <Link href={link.href}>
+                      <Link href={route.href}>
                         <a className='left-0 top-0 mt-[7px] mb-0 mx-4'>
-                          <p className='unWhite text-sm'>{link.name}</p>
+                          <p className='unWhite text-sm'>{route.name}</p>
                         </a>
                       </Link>
                       <div className='flex flex-col space-y-2 py-4 px-4 bg-primary-700 rounded-md'>
-                        { link.child.map((child, idx) => {
+                        { route.children.map((child, idx) => {
                             return (
-                              <Link key={idx} href={child.href? child.href : (link.href + '/' + child.name)}>
+                              <Link key={idx} href={child.href? child.href : (route.href + '/' + child.name)}>
                                 <a><p className='unWhite text-sm'>{child.name}</p></a>
                               </Link>
                             )
@@ -118,8 +97,8 @@ export default function Navbar() {
                 )
               } else {
                 return (
-                  <Link href={link.href} key={index}>
-                    <a className='font-medium unWhite duration-300'>{link.name}</a>
+                  <Link href={route.href} key={index}>
+                    <a className='font-medium unWhite duration-300'>{route.name}</a>
                   </Link>
                 )
               }

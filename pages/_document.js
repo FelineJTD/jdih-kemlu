@@ -5,7 +5,6 @@ export default function Document() {
     <Html lang='id'>
       <Head>
         <meta charSet='utf-8' />
-        <meta name='viewport' content='width=device-width, initial-scale=1' />
         <meta name='theme-color' content='#0D265A' />
         {/* FONTS */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />

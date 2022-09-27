@@ -71,13 +71,13 @@ export default function Navbar() {
 
       {/* DESKTOP NAV */}
       <nav id='nav' className='flex items-center justify-between w-full px-6 py-3 bg-primary-700 text-white sticky top-0 z-50 duration-200 selection:bg-secondary-400 selection:text-primary-500 h-[60px]'>
-        <div className='flex h-full items-center space-x-6'>
+        <div className='flex h-full items-center space-x-8'>
           { Routes.map((route, index) => {
               if (route.children.length > 0) {
                 return (
                   <div key={index} className='relative h-full'>
                     <p className='opacity-0 text-sm relative z-10'>{route.name}</p>
-                    <div className='absolute -left-4 top-0 w-[calc(200%+12px)] min-h-[48px] max-h-0 hover:max-h-fit duration-500 z-40 overflow-hidden flex flex-col'>
+                    <div className='absolute -left-4 top-0 w-[calc(200%+16px)] min-h-[48px] max-h-0 hover:max-h-fit duration-500 z-40 overflow-hidden flex flex-col'>
                       <Link href={route.href}>
                         <a className='left-0 top-0 mt-[7px] mb-0 mx-4'>
                           <p className='unWhite text-sm'>{route.name}</p>

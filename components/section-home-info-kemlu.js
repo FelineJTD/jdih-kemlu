@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Link from 'next/link'
+import Image from 'next/image';
 import Animate from '../components/layout-animate'
 
 export default function SectionInfoKemlu() {
@@ -68,17 +69,34 @@ export default function SectionInfoKemlu() {
         <div className='w-3/4 bg-white rounded-lg'>
           <div className='flex text-primary-500'>
             <button 
-              className={`${isBerita? 'unStaticSelected' : 'unStatic'} w-1/2 py-3 pt-3 pb-4 text-base rounded-b-md font-semibold duration-700`}  
+              className={`${isBerita? 'unStaticSelected' : 'unStatic'} w-1/2 py-3 pt-3 pb-4 text-base rounded-b-md font-semibold enabled:hover:bg-neutral-100`}  
               onClick={() => setIsBerita(true)}
             >
               Berita
             </button>
             <button 
-              className={`${isBerita? 'unStatic' : 'unStaticSelected'} w-1/2 py-3 pt-3 pb-4 text-base rounded-b-md font-semibold duration-700`} 
+              className={`${isBerita? 'unStatic' : 'unStaticSelected'} w-1/2 py-3 pt-3 pb-4 text-base rounded-b-md font-semibold enabled:hover:bg-neutral-100`} 
               onClick={() => setIsBerita(false)}
             >
               Infografis
             </button>
+          </div>
+          <div className='flex flex-col overflow-auto p-6 space-y-4 max-h-[18rem]'>
+            { Berita.map((item, index) => {
+              if (index === 0) return null
+              return (
+              <Link href={item.href} key={index}>
+                <a className='flex p-4 border border-neutral-400 rounded-md'>
+                  <Image src={item.img} alt={item.alt} width={160} height={90} objectFit='cover' objectPosition='center' className='rounded-md' />
+                  <div>
+                    <p className='text-neutral-500 mb-2'>{item.date}</p>
+                    <h4 className='font-medium mb-2'>{item.title}</h4>
+                    <p className='text-neutral-600 mb-2'>{item.desc}</p>
+                  </div>
+                </a>
+              </Link>
+              )
+            })}
           </div>
         </div>
       </div>

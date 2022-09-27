@@ -153,6 +153,10 @@ a, p, button {
   background-position: 0 100%; /*OR bottom left*/
   background-size: 0% 6px;
   background-repeat: no-repeat;
+  transition:
+    background-size 0.7s ease-in-out,
+    background-position 0.7s ease-in-out,
+    background-color 0.1s;
 }
 
 .unStaticSelected {
@@ -160,4 +164,8 @@ a, p, button {
   background-position: 100% 100%; /*OR bottom left*/
   background-size: 100% 6px;
   background-repeat: no-repeat;
+  transition:
+    background-size 0.7s ease-in-out,
+    background-position 0.7s ease-in-out,
+    background-color 0.1s;
 }

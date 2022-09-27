@@ -117,31 +117,47 @@ a, p, button {
 }
 
 /* BUTTON */
-button, .button {
+.button {
   @apply rounded-md py-2 px-3 duration-100 ease-in-out;
 }
 
 .buttonWhite {
-  @apply bg-white text-neutral-800 enabled:hover:bg-neutral-200;
+  @apply button bg-white text-neutral-800 enabled:hover:bg-neutral-200;
+}
+
+/* TAG */
+.tag {
+  @apply rounded-2xl px-3 py-1;
 }
 
 /* UNDERLINE ANIMATION */
 .un, .unWhite {
-  display: inline-block;
-  padding-bottom: 1px;
-  background-position: 50% 80%;
-  background-size: 0% 0.5px;
+  text-decoration: underline;
+  text-decoration-color: transparent;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0px;
+  transition: 0.2s;
+}
+
+.un:hover, .unWhite:hover {
+  text-underline-offset: 2px;
+}
+
+.unWhite:hover {
+  text-decoration-color: #fff;
+}
+
+/* UNDERLINE STATIC */
+.unStatic {
+  background-image: linear-gradient(#2D5D95, #2D5D95);
+  background-position: 0 100%; /*OR bottom left*/
+  background-size: 0% 6px;
   background-repeat: no-repeat;
-  transition:
-    background-size 0.1s,
-    background-position 0.3s;
 }
 
-.unWhite:hover, .un:hover {
-  background-size: 100% 1px;
-  background-position: 50% 100%;
-}
-
-.unWhite {
-  background-image: linear-gradient(#FFF, #FFF);
+.unStaticSelected {
+  background-image: linear-gradient(#2D5D95, #2D5D95);
+  background-position: 100% 100%; /*OR bottom left*/
+  background-size: 100% 6px;
+  background-repeat: no-repeat;
 }

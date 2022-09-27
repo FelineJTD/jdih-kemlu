@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import Animate from '../components/layout-animate'
+import SectionInfoKemlu from '../components/section-home-info-kemlu'
 
 export default function Home() {
   const string_to_url = (string) => {
@@ -165,7 +166,7 @@ export default function Home() {
           {/* content */}
           <Animate before='opacity-0 translate-y-4' after='opacity-100 translate-y-0' className='duration-300 relative z-10'>
             <h2 className='uppercase text-center mb-10'>Tema Dokumen</h2>
-            <div className='flex flex-wrap justify-between gap-4'>
+            <div className='flex flex-wrap lg:flex-nowrap justify-between gap-4'>
               { TemaDokumen.map((item, index) => {
                   return (
                     <Link href={item.href} key={index}>
@@ -185,22 +186,7 @@ export default function Home() {
         </section>
 
         {/* INFORMASI KEMLU */}
-        <section className='defaultPadding'>
-          <Animate before='opacity-0 translate-y-4' after='opacity-100 translate-y-0' className='duration-300'>
-            <h2 className='uppercase text-center mb-6'>Informasi Kemlu</h2>
-            <div className='w-full h-[1px] bg-neutral-400 mb-4' />
-          </Animate>
-          <div className='flex'>
-            <Animate before='-translate-x-[200%]' after='translate-x-0' className='delay-500'>
-              <h3>Berita Terbaru</h3>
-              <Image src='' alt='' width={300} height={200} />
-
-            </Animate>
-            <div>
-
-            </div>
-          </div>
-        </section>
+        <SectionInfoKemlu />
 
         {/* TAUTAN EKSTERNAL */}
         <section className='defaultPadding bg-primary-700 text-white'>

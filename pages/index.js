@@ -1,13 +1,79 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
+import Animate from '../components/layout-animate'
 
 export default function Home() {
-  const DokumenTerbaru = ['PERMENLU NO 67 Tahun 2021', 'PERMENLU NO 6 Tahun 2021', 'Perjanjian Kerja Sama antara Kemenlu dengan Universitas Indonesia Nomor 13/XII/2021']
-
   const string_to_url = (string) => {
     return string.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')
   }
+
+  const DokumenTerbaru = ['PERMENLU NO 67 Tahun 2021', 'PERMENLU NO 6 Tahun 2021', 'Perjanjian Kerja Sama antara Kemenlu dengan Universitas Indonesia Nomor 13/XII/2021']
+
+  const AksesCepat = [
+    {
+      name: 'Dokumen Hukum',
+      href: '/dokumen',
+      icon: '/icons/dokumen.svg',
+      desc: 'Lihat dokumen hukum terkini dengan detail dan terperinci.',
+      cta: 'Akses',
+    }, {
+      name: 'Pembentukan Peraturan',
+      href: '/pembentukan-peraturan',
+      icon: '/icons/pembentukan-peraturan.svg',
+      desc: 'Lihat status pembentukan peraturan perundang-undangan.',
+      cta: 'Lihat status',
+    }, {
+      name: 'Infografis',
+      href: '/infografis',
+      icon: '/icons/infografis.svg',
+      desc: 'Informasi dan visualisasi data dalam sajian grafis.',
+      cta: 'Akses',
+    },
+  ]
+
+  const TemaDokumen = [
+    {
+      name: 'Organisasi & Kelembagaan',
+      href: '/dokumen/' + string_to_url('Organisasi & Kelembagaan'),
+      icon: '/icons/peraturan-pemerintah.svg',
+      count: 5000,
+    }, {
+      name: 'Keuangan & Perlengkapan',
+      href: '/dokumen/' + string_to_url('Keuangan & Perlengkapan'),
+      icon: '/icons/peraturan-pemerintah.svg',
+      count: 5000,
+    }, {
+      name: 'Layanan Publik',
+      href: '/dokumen/' + string_to_url('Layanan Publik'),
+      icon: '/icons/peraturan-pemerintah.svg',
+      count: 5000,
+    }, {
+      name: 'Kepegawaian',
+      href: '/dokumen/' + string_to_url('Kepegawaian'),
+      icon: '/icons/peraturan-pemerintah.svg',
+      count: 5000,
+    }
+  ]
+
+  const TautanEksternal = [
+    {
+      name: 'JDIH Nasional',
+      href: '/',
+      icon: '/icons/icon-flag.svg',
+      desc: 'Temukan Dokumen Hukum Nasional di portal ini.',
+    }, {
+      name: 'JDIHN BPHN',
+      href: '/',
+      icon: '/icons/icon-flag.svg',
+      desc: 'Temukan Dokumen Hukum Nasional di portal ini.',
+    }, {
+      name: 'Treaty Room',
+      href: '/',
+      icon: '/icons/icon-briefcase.svg',
+      desc: 'Lihat Data Perjanjian Internasional di portal ini.',
+    },
+  ]
 
   return (
     <div>
@@ -39,7 +105,7 @@ export default function Home() {
                     { DokumenTerbaru.map((dokumen, index) => {
                         return (
                           <Link href={'/dokumen/' + string_to_url(dokumen)} key={index}>
-                            <a className='whitespace-nowrap border-r-2 border-black pr-2 mr-2'>{dokumen}</a>
+                            <a className='whitespace-nowrap border-r-2 border-black pr-2 mr-2 underline hover:text-primary-500 duration-100'>{dokumen}</a>
                           </Link>
                         )
                       }
@@ -49,7 +115,7 @@ export default function Home() {
                     { DokumenTerbaru.map((dokumen, index) => {
                         return (
                           <Link href={'/dokumen/' + string_to_url(dokumen)} key={index}>
-                            <a className='whitespace-nowrap border-r-2 border-black pr-2 mr-2'>{dokumen}</a>
+                            <a className='whitespace-nowrap border-r-2 border-black pr-2 mr-2 underline hover:text-primary-500 duration-100'>{dokumen}</a>
                           </Link>
                         )
                       }
@@ -59,7 +125,7 @@ export default function Home() {
                     { DokumenTerbaru.map((dokumen, index) => {
                         return (
                           <Link href={'/dokumen/' + string_to_url(dokumen)} key={index}>
-                            <a className='whitespace-nowrap border-r-2 border-black pr-2 mr-2'>{dokumen}</a>
+                            <a className='whitespace-nowrap border-r-2 border-black pr-2 mr-2 underline hover:text-primary-500 duration-100'>{dokumen}</a>
                           </Link>
                         )
                       }
@@ -69,6 +135,92 @@ export default function Home() {
               </div>
             </div>
           </div>
+        </section>
+
+        {/* AKSES CEPAT */}
+        <section className='defaultPadding'>
+          <Animate before='opacity-0 translate-y-4' after='opacity-100 translate-y-0' className='duration-300'>
+            <h2 className='uppercase text-center mb-10'>Akses Cepat</h2>
+            <div className='flex justify-between space-x-4'>
+              { AksesCepat.map((item, index) => {
+                  return (
+                    <Link href={item.href} key={index}>
+                      <a className='border border-neutral-400 bg-white rounded-md p-4'>
+                        <Image src={item.icon} alt='' width={36} height={36} />
+                        <h3>{item.name}</h3>
+                        <p>{item.desc}</p>
+                        <button className='buttonPrimary'>{item.cta}</button>
+                      </a>
+                    </Link>
+                  )
+              })}
+            </div>
+          </Animate>
+        </section>
+
+        {/* TEMA DOKUMEN */}
+        <section className='defaultPadding relative bg-[url("/images/homepage/img-background-hero-tema.png")] bg-cover bg-no-repeat bg-center text-white'>
+          {/* overlay */}
+          <div className='absolute top-0 left-0 w-full h-full bg-primary-700/75 z-0' aria-hidden />
+          {/* content */}
+          <Animate before='opacity-0 translate-y-4' after='opacity-100 translate-y-0' className='duration-300 relative z-10'>
+            <h2 className='uppercase text-center mb-10'>Tema Dokumen</h2>
+            <div className='flex justify-between space-x-4'>
+              { TemaDokumen.map((item, index) => {
+                  return (
+                    <Link href={item.href} key={index}>
+                      <a className='w-72 flex flex-col items-center border border-neutral-400 rounded-md p-4 text-center'>
+                        <Image src={item.icon} alt='' width={36} height={36} />
+                        <p className='mb-4'>
+                          <span className='text-3xl font-semibold'>{item.count}<br /></span>
+                          dokumen
+                        </p>
+                        <h3 className='text-lg font-medium'>{item.name}</h3>
+                      </a>
+                    </Link>
+                  )
+              })}
+            </div>
+          </Animate>
+        </section>
+
+        {/* INFORMASI KEMLU */}
+        <section className='defaultPadding'>
+          <Animate before='opacity-0 translate-y-4' after='opacity-100 translate-y-0' className='duration-300'>
+            <h2 className='uppercase text-center mb-6'>Informasi Kemlu</h2>
+            <div className='w-full h-[1px] bg-neutral-400 mb-4' />
+          </Animate>
+          <div className='flex'>
+            <Animate before='-translate-x-[200%]' after='translate-x-0' className='delay-500'>
+              <h3>Berita Terbaru</h3>
+              <Image src='' alt='' width={300} height={200} />
+
+            </Animate>
+            <div>
+              
+            </div>
+          </div>
+        </section>
+
+        {/* TAUTAN EKSTERNAL */}
+        <section className='defaultPadding bg-primary-700 text-white'>
+          <Animate before='opacity-0 translate-y-4' after='opacity-100 translate-y-0' className='duration-300'>
+            <h2 className='uppercase text-center mb-10'>Tautan Eksternal</h2>
+            <div className='flex justify-between space-x-4'>
+              { TautanEksternal.map((item, index) => {
+                  return (
+                    <Link href={item.href} key={index}>
+                      <a className='border border-neutral-400 rounded-md p-4'>
+                        <Image src={item.icon} alt='' width={36} height={36} />
+                        <h3>{item.name}</h3>
+                        <p>{item.desc}</p>
+                        <button className='buttonPrimary'>Kunjungi</button>
+                      </a>
+                    </Link>
+                  )
+              })}
+            </div>
+          </Animate>
         </section>
       </main>
     </div>

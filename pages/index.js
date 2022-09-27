@@ -1,7 +1,14 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
 
 export default function Home() {
+  const DokumenTerbaru = ['PERMENLU NO 67 Tahun 2021', 'PERMENLU NO 6 Tahun 2021', 'Perjanjian Kerja Sama antara Kemenlu dengan Universitas Indonesia Nomor 13/XII/2021']
+
+  const string_to_url = (string) => {
+    return string.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')
+  }
+
   return (
     <div>
       <Head>
@@ -24,6 +31,43 @@ export default function Home() {
             <p className='text-neutral-200'>Temukan Informasi dan Dokumentasi Hukum Terkini dari Kementrian Luar Negeri</p>
             <input type='text' className='mb-7' />
             <p className='font-medium mb-7 text-neutral-100'>Pencarian Populer Dokumen Hukum JDIH</p>
+            <div className='absolute bottom-0 flex bg-secondary-400 w-full py-2 text-neutral-700'>
+              <button className='whitespace-nowrap buttonWhite mx-2'>Dokumen Terbaru</button>
+              <div className='overflow-hidden'>
+                <div className='flex w-fit h-full items-center animate-scrollLeft hover:[animation-play-state:paused] justify-around'>
+                  <div className='flex justify-around w-1/3'>
+                    { DokumenTerbaru.map((dokumen, index) => {
+                        return (
+                          <Link href={'/dokumen/' + string_to_url(dokumen)} key={index}>
+                            <a className='whitespace-nowrap border-r-2 border-black pr-2 mr-2'>{dokumen}</a>
+                          </Link>
+                        )
+                      }
+                    )}
+                  </div>
+                  <div className='flex justify-around w-1/3'>
+                    { DokumenTerbaru.map((dokumen, index) => {
+                        return (
+                          <Link href={'/dokumen/' + string_to_url(dokumen)} key={index}>
+                            <a className='whitespace-nowrap border-r-2 border-black pr-2 mr-2'>{dokumen}</a>
+                          </Link>
+                        )
+                      }
+                    )}
+                  </div>
+                  <div className='flex justify-around w-1/3'>
+                    { DokumenTerbaru.map((dokumen, index) => {
+                        return (
+                          <Link href={'/dokumen/' + string_to_url(dokumen)} key={index}>
+                            <a className='whitespace-nowrap border-r-2 border-black pr-2 mr-2'>{dokumen}</a>
+                          </Link>
+                        )
+                      }
+                    )}
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>

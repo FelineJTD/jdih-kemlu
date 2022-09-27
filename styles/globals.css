@@ -67,7 +67,7 @@ h6 {
   line-height: 20px;
 }
 
-a, p {
+a, p, button {
   font-size: 14px;
   line-height: 20px;
 }
@@ -97,12 +97,13 @@ a, p {
     font-size: 12px;
     line-height: 16px;
   }
-  a, p {
+  a, p, button {
     font-size: 10px;
     line-height: 16px;
   }
 }
 
+/* PADDING */
 .defaultPaddingX {
   @apply px-20 xl:px-[10%];
 }
@@ -113,6 +114,15 @@ a, p {
 
 .defaultPadding {
   @apply defaultPaddingX defaultPaddingY;
+}
+
+/* BUTTON */
+button, .button {
+  @apply rounded-md py-2 px-3 duration-100 ease-in-out;
+}
+
+.buttonWhite {
+  @apply bg-white text-neutral-800 enabled:hover:bg-neutral-200;
 }
 
 /* UNDERLINE ANIMATION */

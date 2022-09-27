@@ -61,6 +61,15 @@ module.exports = {
         'mengubah': '#36A5B2',
         'diubah': '#FF6600',
       },
+      keyframes: {
+        scrollLeft: {
+          '0%': { transform: 'translateX(0)' },
+          '100%': { transform: 'translateX(-33.33%)' },
+        },
+      },
+      animation: {
+        scrollLeft: 'scrollLeft 24s linear infinite',
+      }
     },
   },
   plugins: [],

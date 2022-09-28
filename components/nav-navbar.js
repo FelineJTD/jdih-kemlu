@@ -16,7 +16,6 @@ export default function Navbar() {
     document.getElementById('toggle').style.transform = 'rotate(180deg)';
     document.getElementById('nav').style.transform = 'translateY(0)';
     document.getElementById('mobile-nav').style.display = 'flex';
-    document.getElementById('mobile-nav').style.height = window.innerHeight + 'px';
     document.getElementById('mobile-nav').style.transform = 'translateY(0)';
     setIsMobileNavOpen(true);
   }
@@ -60,18 +59,17 @@ export default function Navbar() {
   return (
     <>
       {/* MOBILE NAV */}
-      <nav id='mobile-nav' className='w-full bg-primary-700 z-50 fixed top-0 left-0 p-3 duration-300 translate-y-[-100vh] lg:hidden flex flex-col space-y-6 text-left text-white justify-end selection:bg-secondary-400 selection:text-primary-500'>
-        <Link href='/'>
-          <a className='' onClick={closeMobileNav}>Beranda</a>
-        </Link>
-        <Link href='/tentang-kami'>
-          <p className='' onClick={closeMobileNav}>Tentang Kami</p>
-        </Link>
+      <nav id='mobile-nav' className='w-full bg-primary-700 z-50 fixed top-0 left-0 p-3 duration-300 translate-y-[-100vh] lg:hidden flex flex-col space-y-6 text-left text-white selection:bg-secondary-400 selection:text-primary-500 pt-[60px]'>
+        { Routes.map((route, index) => (
+          <Link key={index} href={route.href}>
+            <a onClick={closeMobileNav}>{route.name}</a>
+          </Link>
+        ))}
       </nav>
 
       {/* DESKTOP NAV */}
       <nav id='nav' className='flex items-center justify-between w-full px-6 py-3 bg-primary-700 text-white sticky top-0 z-50 duration-200 selection:bg-secondary-400 selection:text-primary-500 h-[60px]'>
-        <div className='flex h-full items-center space-x-8'>
+        <div className='h-full items-center space-x-8 hidden md:flex'>
           { Routes.map((route, index) => {
               if (route.children.length > 0) {
                 return (

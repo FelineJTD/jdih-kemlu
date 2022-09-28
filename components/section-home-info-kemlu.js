@@ -61,37 +61,39 @@ export default function SectionInfoKemlu() {
               <img src={Berita[0].img} alt={Berita[0].alt} className='w-full max-h-[600px] object-cover object-center group-hover:scale-110 duration-300' />
             </div>
             <p className='text-neutral-500 mb-2'>{Berita[0].date}</p>
-            <h4 className='font-medium mb-2'>{Berita[0].title}</h4>
+            <h4 className='font-semibold mb-2'>{Berita[0].title}</h4>
             <p className='text-neutral-600 mb-2'>{Berita[0].desc}</p>
           </a></Link>
         </div>
         {/* RIGHT */}
-        <div className='w-3/4 bg-white rounded-lg'>
+        <div className='w-3/4 bg-white rounded-lg max-h-full'>
           <div className='flex text-primary-500'>
             <button 
-              className={`${isBerita? 'unStaticSelected' : 'unStatic'} w-1/2 py-3 pt-3 pb-4 text-base rounded-b-md font-semibold enabled:hover:bg-neutral-100`}  
+              className={`${isBerita? 'unStaticSelected' : 'unStatic enabled:hover:bg-neutral-100'} w-1/2 py-3 pt-3 pb-4 text-base rounded-b-md font-semibold`}  
               onClick={() => setIsBerita(true)}
             >
               Berita
             </button>
             <button 
-              className={`${isBerita? 'unStatic' : 'unStaticSelected'} w-1/2 py-3 pt-3 pb-4 text-base rounded-b-md font-semibold enabled:hover:bg-neutral-100`} 
+              className={`${isBerita? 'unStatic enabled:hover:bg-neutral-100' : 'unStaticSelected'} w-1/2 py-3 pt-3 pb-4 text-base rounded-b-md font-semibold`} 
               onClick={() => setIsBerita(false)}
             >
               Infografis
             </button>
           </div>
-          <div className='flex flex-col overflow-auto p-6 space-y-4 max-h-[18rem]'>
+          <div className='flex flex-col overflow-auto p-6 space-y-4 max-h-[24rem]'>
             { Berita.map((item, index) => {
               if (index === 0) return null
               return (
               <Link href={item.href} key={index}>
-                <a className='flex p-4 border border-neutral-400 rounded-md'>
-                  <Image src={item.img} alt={item.alt} width={160} height={90} objectFit='cover' objectPosition='center' className='rounded-md' />
-                  <div>
-                    <p className='text-neutral-500 mb-2'>{item.date}</p>
-                    <h4 className='font-medium mb-2'>{item.title}</h4>
-                    <p className='text-neutral-600 mb-2'>{item.desc}</p>
+                <a className='flex p-4 space-x-4 border border-neutral-400 rounded-md hover:bg-neutral-100 duration-100 min-h-[10rem]'>
+                  <div className='relative min-w-full lg:min-w-0 aspect-[3/2] lg:min-h-full flex-shrink-0'>
+                    <Image src={item.img} alt={item.alt} layout='fill' objectFit='cover' objectPosition='center' className='rounded-md' />
+                  </div>
+                  <div className='h-full overflow-hidden'>
+                    <p className='text-neutral-500 mb-2 text-xs'>{item.date}</p>
+                    <h4 className='font-semibold mb-2 text-base'>{item.title}</h4>
+                    <p className='text-neutral-600 mb-2 text-xs'>{item.desc}</p>
                   </div>
                 </a>
               </Link>

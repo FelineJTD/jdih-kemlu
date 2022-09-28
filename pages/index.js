@@ -142,21 +142,21 @@ export default function Home() {
         <section className='defaultPadding'>
           <Animate before='opacity-0 translate-y-4' after='opacity-100 translate-y-0' className='duration-300'>
             <h2 className='uppercase text-center mb-10'>Akses Cepat</h2>
-            <div className='flex flex-col md:flex-row justify-between md:space-x-4'>
-              { AksesCepat.map((item, index) => {
-                  return (
-                    <Link href={item.href} key={index}>
-                      <a className='border border-neutral-400 bg-white rounded-md p-4'>
-                        <Image src={item.icon} alt='' width={36} height={36} />
-                        <h3>{item.name}</h3>
-                        <p>{item.desc}</p>
-                        <button className='buttonPrimary'>{item.cta}</button>
-                      </a>
-                    </Link>
-                  )
-              })}
-            </div>
           </Animate>
+          <div className='flex flex-col md:flex-row justify-between gap-4'>
+            { AksesCepat.map((item, index) => {
+                return (
+                  <Link href={item.href} key={index}>
+                    <a className='border border-neutral-400 bg-white rounded-md p-4'>
+                      <Image src={item.icon} alt='' width={36} height={36} />
+                      <h3>{item.name}</h3>
+                      <p>{item.desc}</p>
+                      <button className='buttonPrimary'>{item.cta}</button>
+                    </a>
+                  </Link>
+                )
+            })}
+          </div>
         </section>
 
         {/* TEMA DOKUMEN */}
@@ -166,23 +166,23 @@ export default function Home() {
           {/* content */}
           <Animate before='opacity-0 translate-y-4' after='opacity-100 translate-y-0' className='duration-300 relative z-10'>
             <h2 className='uppercase text-center mb-10'>Tema Dokumen</h2>
-            <div className='flex flex-wrap lg:flex-nowrap justify-between gap-4'>
-              { TemaDokumen.map((item, index) => {
-                  return (
-                    <Link href={item.href} key={index}>
-                      <a className='w-72 flex flex-col items-center border border-neutral-400 rounded-md p-4 text-center'>
-                        <Image src={item.icon} alt='' width={36} height={36} />
-                        <p className='mb-4'>
-                          <span className='text-3xl font-semibold'>{item.count}<br /></span>
-                          dokumen
-                        </p>
-                        <h3 className='text-lg font-medium'>{item.name}</h3>
-                      </a>
-                    </Link>
-                  )
-              })}
-            </div>
           </Animate>
+          <div className='grid grid-cols-2 md:grid-cols-4 gap-4 relative z-10'>
+            { TemaDokumen.map((item, index) => {
+                return (
+                  <Link href={item.href} key={index}>
+                    <a className='flex flex-col items-center border border-neutral-400 rounded-md p-4 text-center'>
+                      <Image src={item.icon} alt='' width={36} height={36} />
+                      <p className='mb-4'>
+                        <span className='text-3xl font-semibold'>{item.count}<br /></span>
+                        dokumen
+                      </p>
+                      <h3 className='text-lg font-medium'>{item.name}</h3>
+                    </a>
+                  </Link>
+                )
+            })}
+          </div>
         </section>
 
         {/* INFORMASI KEMLU */}
@@ -192,21 +192,21 @@ export default function Home() {
         <section className='defaultPadding bg-primary-700 text-white'>
           <Animate before='opacity-0 translate-y-4' after='opacity-100 translate-y-0' className='duration-300'>
             <h2 className='uppercase text-center mb-10'>Tautan Eksternal</h2>
-            <div className='flex flex-col md:flex-row justify-between gap-4'>
-              { TautanEksternal.map((item, index) => {
-                  return (
-                    <Link href={item.href} key={index}>
-                      <a className='border border-neutral-400 rounded-md p-4'>
-                        <Image src={item.icon} alt='' width={36} height={36} />
-                        <h3>{item.name}</h3>
-                        <p>{item.desc}</p>
-                        <button className='buttonPrimary'>Kunjungi</button>
-                      </a>
-                    </Link>
-                  )
-              })}
-            </div>
           </Animate>
+          <div className='flex flex-col md:flex-row justify-between gap-4'>
+            { TautanEksternal.map((item, index) => {
+                return (
+                  <Link href={item.href} key={index}>
+                    <a className='border border-neutral-400 rounded-md p-4'>
+                      <Image src={item.icon} alt='' width={36} height={36} />
+                      <h3>{item.name}</h3>
+                      <p>{item.desc}</p>
+                      <button className='buttonPrimary'>Kunjungi</button>
+                    </a>
+                  </Link>
+                )
+            })}
+          </div>
         </section>
       </main>
     </div>

@@ -69,13 +69,13 @@ export default function SectionInfoKemlu() {
         <div className='lg:w-3/4 bg-white rounded-lg max-h-full'>
           <div className='flex text-primary-500'>
             <button 
-              className={`${isBerita? 'unStaticSelected' : 'unStatic enabled:hover:bg-neutral-100'} w-1/2 py-3 pt-3 pb-4 text-base rounded-b-md font-semibold`}  
+              className={`${isBerita? 'unStaticSelected' : 'unStatic enabled:hover:bg-neutral-100'} w-1/2 py-3 pt-3 pb-4 text-base rounded-lg font-semibold`}  
               onClick={() => setIsBerita(true)}
             >
               Berita
             </button>
             <button 
-              className={`${isBerita? 'unStatic enabled:hover:bg-neutral-100' : 'unStaticSelected'} w-1/2 py-3 pt-3 pb-4 text-base rounded-b-md font-semibold`} 
+              className={`${isBerita? 'unStatic enabled:hover:bg-neutral-100' : 'unStaticSelected'} w-1/2 py-3 pt-3 pb-4 text-base rounded-lg font-semibold`} 
               onClick={() => setIsBerita(false)}
             >
               Infografis

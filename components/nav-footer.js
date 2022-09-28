@@ -14,7 +14,7 @@ export default function Footer() {
       <div className='w-full lg:w-3/12'>
         <div className='flex lg:flex-col gap-4'>
           <Image src='/logo-kemlu.png' alt='Logo Kemlu' width={60} height={60} layout='fixed' />
-          <h3 className='mb-8'>
+          <h3 className='text-xl md:text-2xl mb-8'>
             <span className='font-medium'>Kementrian Luar Negeri</span><br />
             Republik Indonesia
           </h3>

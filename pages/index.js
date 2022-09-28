@@ -86,11 +86,11 @@ export default function Home() {
 
       <main>
         {/* MAIN HERO SECTION */}
-        <section className='bg-[url("/images/homepage/img-background-hero.png")] h-[calc(100vh-60px)] bg-cover bg-center bg-no-repeat relative text-white text-center'>
+        <section className='bg-[url("/images/homepage/img-background-hero.png")] lg:h-[calc(100vh-60px)] bg-cover bg-center bg-no-repeat relative text-white text-center'>
           {/* overlay */}
           <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-b from-primary-700/90 to-primary-700/40 z-0' aria-hidden />
           {/* content */}
-          <div className='defaultPaddingX h-full w-full flex flex-col items-center justify-center relative'>
+          <div className='defaultPadding h-full w-full flex flex-col items-center justify-center relative'>
             <h1 className='uppercase mb-7'>
               Jaringan Dokumentasi dan Informasi Hukum<br />
               Kementrian Luar Negeri

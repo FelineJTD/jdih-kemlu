@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -76,6 +77,22 @@ export default function Home() {
     },
   ]
 
+  const [showKrisarButton, setShowKrisarButton] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (window.scrollY > window.innerHeight*2/3) {
+        setShowKrisarButton(true);
+      } else {
+        setShowKrisarButton(false);
+      }
+    }
+    window.addEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    }
+  }, []);
+
   return (
     <div>
       <Head>
@@ -84,7 +101,13 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main>
+      <main className='relative'>
+        {/* KRISAR BUTTON */}
+        <button className={`${showKrisarButton? 'opacity-100' : 'opacity-0'} flex fixed bg-secondary-400 top-[50vh] right-0 z-40 text-gray-900 p-2 duration-300 rotate-90 origin-top-right`}>
+          <p className='un hover:decoration-neutral-900 mr-2'><b>Kritik dan Saran</b></p>
+          <p>★</p>
+        </button>
+
         {/* MAIN HERO SECTION */}
         <section className='bg-[url("/images/homepage/img-background-hero.png")] lg:h-[calc(100vh-60px)] bg-cover bg-center bg-no-repeat relative text-white text-center'>
           {/* overlay */}

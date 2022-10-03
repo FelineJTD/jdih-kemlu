@@ -1,6 +1,6 @@
 export const Routes = [
   { name: 'Beranda', href: '/', children: [] },
-  { name: 'Dokumen Hukum', href: '/dokumen', children: [
+  { name: 'Dokumen Hukum', href: 'dokumen', children: [
     { name: 'UUD 1945' },
     { name: 'UU/Perppu' },
     { name: 'Peraturan Pemerintah (PP)' },

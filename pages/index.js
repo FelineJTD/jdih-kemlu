@@ -109,7 +109,7 @@ export default function Home() {
         </button>
 
         {/* MAIN HERO SECTION */}
-        <section className='bg-[url("/images/homepage/img-background-hero.png")] lg:h-[calc(100vh-60px)] bg-cover bg-center bg-no-repeat relative text-white text-center'>
+        <section className='bg-[url("/images/homepage/img-background-hero.png")] lg:h-screen bg-cover bg-center bg-no-repeat relative text-white text-center -mt-[60px]'>
           {/* overlay */}
           <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-b from-primary-700/90 to-primary-700/40 z-0' aria-hidden />
           {/* content */}

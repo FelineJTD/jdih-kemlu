@@ -7,7 +7,7 @@ import SectionInfoKemlu from '../components/section-home-info-kemlu'
 
 export default function Home() {
   const string_to_url = (string) => {
-    return string.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')
+    return string.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '-')
   }
 
   const DokumenTerbaru = ['PERMENLU NO 67 Tahun 2021', 'PERMENLU NO 6 Tahun 2021', 'Perjanjian Kerja Sama antara Kemenlu dengan Universitas Indonesia Nomor 13/XII/2021']

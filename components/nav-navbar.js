@@ -104,7 +104,7 @@ export default function Navbar() {
         </div>
 
         <div className='flex'>
-          <a href='https://geodashboard.braga.co.id/' target='_blank' rel='noreferrer noopener'>
+          <a href='' target='_blank' rel='noreferrer noopener'>
             <button className='buttonLight text-gray-900 bg-white bg-opacity-50'>
               Pencarian
             </button>

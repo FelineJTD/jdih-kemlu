@@ -143,15 +143,15 @@ export default function Home() {
           <Animate before='opacity-0 translate-y-4' after='opacity-100 translate-y-0' className='duration-300'>
             <h2 className='uppercase text-center mb-10'>Akses Cepat</h2>
           </Animate>
-          <div className='flex flex-col md:flex-row justify-between gap-4'>
+          <div className='grid grid-cols-1 md:grid-cols-3 justify-between gap-4'>
             { AksesCepat.map((item, index) => {
                 return (
                   <Link href={item.href} key={index}>
-                    <a className='border border-neutral-400 bg-white rounded-md p-4'>
+                    <a className='border border-neutral-400 bg-white rounded-md p-4 hover:shadow-md hover:border-primary-400 duration-100'>
                       <Image src={item.icon} alt='' width={36} height={36} />
-                      <h3>{item.name}</h3>
-                      <p>{item.desc}</p>
-                      <button className='buttonPrimary'>{item.cta}</button>
+                      <h3 className='my-1'>{item.name}</h3>
+                      <p className='mb-2 text-neutral-700'>{item.desc}</p>
+                      <button className='underline hover:text-primary-500 duration-100'><b>{item.cta}</b></button>
                     </a>
                   </Link>
                 )
@@ -171,9 +171,9 @@ export default function Home() {
             { TemaDokumen.map((item, index) => {
                 return (
                   <Link href={item.href} key={index}>
-                    <a className='flex flex-col items-center border border-neutral-400 rounded-md p-4 text-center'>
+                    <a className='flex flex-col items-center border border-neutral-400 rounded-md p-4 text-center hover:drop-shadow-[0_0_8px_rgba(255,206,30,0.7)] hover:border-secondary-400 duration-100'>
                       <Image src={item.icon} alt='' width={36} height={36} />
-                      <p className='mb-4'>
+                      <p className='my-4'>
                         <span className='text-3xl font-semibold'>{item.count}<br /></span>
                         dokumen
                       </p>
@@ -197,7 +197,7 @@ export default function Home() {
             { TautanEksternal.map((item, index) => {
                 return (
                   <Link href={item.href} key={index}>
-                    <a className='border border-neutral-400 rounded-md p-4'>
+                    <a className='border border-neutral-400 rounded-md p-4 hover:shadow-[0_0_8px_rgba(255,206,30,0.7)] hover:border-secondary-400 duration-100'>
                       <Image src={item.icon} alt='' width={36} height={36} />
                       <h3>{item.name}</h3>
                       <p>{item.desc}</p>

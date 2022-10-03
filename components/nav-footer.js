@@ -92,7 +92,7 @@ export default function Footer() {
               { route.children.map((child, index) => (
                 <li key={index}>
                   <Link href={child.href? child.href : (route.href + '/' + child.name)}>
-                    <a className='mb-2 un hover:decoration-neutral-300 text-neutral-300'>{child.name}</a>
+                    <a className='pb-2 un hover:decoration-neutral-300 text-neutral-300'>{child.name}</a>
                   </Link>
                 </li>
               ))}
@@ -109,7 +109,7 @@ export default function Footer() {
                     href={link.href} 
                     target='_blank'
                     rel='noopener noreferrer'
-                    className='mb-2 un hover:decoration-neutral-300 text-neutral-300'
+                    className='pb-2 un hover:decoration-neutral-300 text-neutral-300'
                   >
                     {link.name}
                   </a>

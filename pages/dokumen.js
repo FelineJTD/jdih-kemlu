@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import Template from '../../components/layout-template'
+import Template from '../components/layout-template'
 
 export default function Dokumen() {
   const paths = [

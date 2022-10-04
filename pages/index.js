@@ -6,9 +6,9 @@ import Animate from '../components/layout-animate'
 import SectionInfoKemlu from '../components/section-home-info-kemlu'
 
 export default function Home() {
-  const string_to_url = (string) => {
-    return string.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '-')
-  }
+  // const string_to_url = (string) => {
+  //   return string.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '-')
+  // }
 
   const DokumenTerbaru = ['PERMENLU NO 67 Tahun 2021', 'PERMENLU NO 6 Tahun 2021', 'Perjanjian Kerja Sama antara Kemenlu dengan Universitas Indonesia Nomor 13/XII/2021']
 
@@ -37,22 +37,22 @@ export default function Home() {
   const TemaDokumen = [
     {
       name: 'Organisasi & Kelembagaan',
-      href: '/dokumen/' + string_to_url('Organisasi & Kelembagaan'),
+      href: '/dokumen/organisasi-kelembagaan',
       icon: '/icons/peraturan-pemerintah.svg',
       count: 5000,
     }, {
       name: 'Keuangan & Perlengkapan',
-      href: '/dokumen/' + string_to_url('Keuangan & Perlengkapan'),
+      href: '/dokumen/keuangan-perlengkapan',
       icon: '/icons/peraturan-pemerintah.svg',
       count: 5000,
     }, {
       name: 'Layanan Publik',
-      href: '/dokumen/' + string_to_url('Layanan Publik'),
+      href: '/dokumen/layanan-publik',
       icon: '/icons/peraturan-pemerintah.svg',
       count: 5000,
     }, {
       name: 'Kepegawaian',
-      href: '/dokumen/' + string_to_url('Kepegawaian'),
+      href: '/dokumen/kepegawaian',
       icon: '/icons/peraturan-pemerintah.svg',
       count: 5000,
     }

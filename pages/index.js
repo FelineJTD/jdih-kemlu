@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -6,9 +5,9 @@ import Animate from '../components/layout-animate'
 import SectionInfoKemlu from '../components/section-home-info-kemlu'
 
 export default function Home() {
-  // const string_to_url = (string) => {
-  //   return string.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '-')
-  // }
+  const string_to_url = (string) => {
+    return string.toLowerCase().replace(/ /g, '-').replace(/[^\w-]+/g, '')
+  }
 
   const DokumenTerbaru = ['PERMENLU NO 67 Tahun 2021', 'PERMENLU NO 6 Tahun 2021', 'Perjanjian Kerja Sama antara Kemenlu dengan Universitas Indonesia Nomor 13/XII/2021']
 
@@ -37,22 +36,22 @@ export default function Home() {
   const TemaDokumen = [
     {
       name: 'Organisasi & Kelembagaan',
-      href: '/dokumen/organisasi-kelembagaan',
+      href: '/dokumen/' + string_to_url('Organisasi & Kelembagaan'),
       icon: '/icons/peraturan-pemerintah.svg',
       count: 5000,
     }, {
       name: 'Keuangan & Perlengkapan',
-      href: '/dokumen/keuangan-perlengkapan',
+      href: '/dokumen/' + string_to_url('Keuangan & Perlengkapan'),
       icon: '/icons/peraturan-pemerintah.svg',
       count: 5000,
     }, {
       name: 'Layanan Publik',
-      href: '/dokumen/layanan-publik',
+      href: '/dokumen/' + string_to_url('Layanan Publik'),
       icon: '/icons/peraturan-pemerintah.svg',
       count: 5000,
     }, {
       name: 'Kepegawaian',
-      href: '/dokumen/kepegawaian',
+      href: '/dokumen/' + string_to_url('Kepegawaian'),
       icon: '/icons/peraturan-pemerintah.svg',
       count: 5000,
     }
@@ -77,22 +76,6 @@ export default function Home() {
     },
   ]
 
-  const [showKrisarButton, setShowKrisarButton] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => {
-      if (window.scrollY > window.innerHeight*2/3) {
-        setShowKrisarButton(true);
-      } else {
-        setShowKrisarButton(false);
-      }
-    }
-    window.addEventListener('scroll', onScroll);
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-    }
-  }, []);
-
   return (
     <div>
       <Head>
@@ -101,15 +84,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className='relative'>
-        {/* KRISAR BUTTON */}
-        <button className={`${showKrisarButton? 'opacity-100' : 'opacity-0'} flex fixed bg-secondary-300 top-[50vh] right-0 z-40 text-gray-900 p-2 duration-300 rotate-90 origin-top-right rounded-b-sm`}>
-          <p className='un hover:decoration-neutral-900 mr-2'><b>Kritik dan Saran</b></p>
-          <p>★</p>
-        </button>
-
+      <main>
         {/* MAIN HERO SECTION */}
-        <section className='bg-[url("/images/homepage/img-background-hero.png")] lg:h-screen bg-cover bg-center bg-no-repeat relative text-white text-center -mt-[60px]'>
+        <section className='bg-[url("/images/homepage/img-background-hero.png")] lg:h-[calc(100vh-60px)] bg-cover bg-center bg-no-repeat relative text-white text-center'>
           {/* overlay */}
           <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-b from-primary-700/90 to-primary-700/40 z-0' aria-hidden />
           {/* content */}

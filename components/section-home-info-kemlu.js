@@ -46,12 +46,12 @@ export default function SectionInfoKemlu() {
   ]
 
   return (
-    <section className='defaultPadding'>
+    <section className='flex flex-col defaultPadding'>
       <Animate before='opacity-0 translate-y-4' after='opacity-100 translate-y-0' className='duration-300'>
         <h2 className='uppercase text-center mb-6'>Informasi Kemlu</h2>
       </Animate>
       <div className='w-full h-[1px] bg-neutral-400 mb-8' />
-      <div className='flex flex-col lg:flex-row gap-8'>
+      <div className='flex flex-col lg:flex-row gap-8 mb-4'>
         {/* LEFT */}
         <div className='lg:w-1/4'>
           <h3 className='tag rounded-2xl bg-primary-500 text-white text-sm font-semibold w-fit mb-4 duration-100'>{isBerita? 'Berita Terbaru' : 'Infografis Terbaru'}</h3>
@@ -102,6 +102,10 @@ export default function SectionInfoKemlu() {
           </div>
         </div>
       </div>
+      <Link href={isBerita? '/berita' : '/infografis'}><a className='flex gap-2 hover:gap-3 hover:-mr-1 self-end duration-100'>
+        <p><b>Semua {isBerita? 'Berita' : 'Infografis'}</b></p>
+        <Image src='/icons/icon-arrow-small.svg' alt='icon arrow right' width={20} height={20} />
+      </a></Link>
     </section>
   )
 }

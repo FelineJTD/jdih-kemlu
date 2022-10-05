@@ -181,10 +181,12 @@ export default function Home() {
             { AksesCepat.map((item, index) => {
                 return (
                   <Link href={item.href} key={index}>
-                    <a className='border border-neutral-400 bg-white rounded-md p-4 hover:shadow-md hover:border-primary-400 duration-100'>
-                      <Image src={item.icon} alt='' width={36} height={36} />
-                      <h3 className='my-1'>{item.name}</h3>
-                      <p className='mb-2 text-neutral-700'>{item.desc}</p>
+                    <a className='flex flex-col justify-between items-start border border-neutral-400 bg-white rounded-md p-4 hover:shadow-md hover:border-primary-400 duration-100'>
+                      <div>
+                        <Image src={item.icon} alt='' width={36} height={36} />
+                        <h3 className='my-1'>{item.name}</h3>
+                        <p className='mb-2 text-neutral-700'>{item.desc}</p>
+                      </div>
                       <button className='underline hover:text-primary-500 duration-100'><b>{item.cta}</b></button>
                     </a>
                   </Link>

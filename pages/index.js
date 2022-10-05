@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -76,6 +77,22 @@ export default function Home() {
     },
   ]
 
+  const [showKrisarButton, setShowKrisarButton] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      if (window.scrollY > window.innerHeight*2/3) {
+        setShowKrisarButton(true);
+      } else {
+        setShowKrisarButton(false);
+      }
+    }
+    window.addEventListener('scroll', onScroll);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    }
+  }, []);
+
   return (
     <div>
       <Head>
@@ -85,6 +102,8 @@ export default function Home() {
       </Head>
 
       <main>
+
+
         {/* MAIN HERO SECTION */}
         <section className='bg-[url("/images/homepage/img-background-hero.png")] lg:h-[calc(100vh-60px)] bg-cover bg-center bg-no-repeat relative text-white text-center'>
           {/* overlay */}

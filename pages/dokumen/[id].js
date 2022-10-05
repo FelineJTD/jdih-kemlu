@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import Template from '../../components/layout-template'
 
-export default function Dokumen() {
+export default function DetailDokumen() {
   const paths = [
     {
       name: 'Dokumen Hukum',

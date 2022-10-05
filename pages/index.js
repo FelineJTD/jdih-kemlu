@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Animate from '../components/layout-animate'
 import SectionInfoKemlu from '../components/section-home-info-kemlu'
-import ComponentKrisar from '../components/cmp-krisar'
+import ComponentKrisarButton from '../components/cmp-krisar-button'
 
 export default function Home() {
   const string_to_url = (string) => {
@@ -89,7 +89,7 @@ export default function Home() {
 
       <main>
         {/* KRITIK & SARAN FLOATING COMPONENT */}
-        <ComponentKrisar />
+        <ComponentKrisarButton />
 
         {/* MAIN HERO SECTION */}
         <section className='bg-[url("/images/homepage/img-background-hero.png")] lg:h-screen bg-cover bg-center bg-no-repeat relative text-white text-center -mt-[60px]'>

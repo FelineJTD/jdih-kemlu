@@ -125,6 +125,14 @@ a, p, button {
   @apply button bg-white text-neutral-800 enabled:hover:bg-neutral-200;
 }
 
+.buttonSecondary {
+  @apply button bg-secondary-300 text-neutral-800 enabled:hover:bg-secondary-400;
+}
+
+.buttonTertiary {
+  @apply button text-neutral-400 enabled:hover:bg-neutral-100;
+}
+
 /* TAG */
 .tag {
   @apply rounded-2xl px-3 py-1;

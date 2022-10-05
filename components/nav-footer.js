@@ -76,11 +76,11 @@ export default function Footer() {
       <div className='hidden lg:block flex-grow min-h-full mx-auto max-w-[1px] bg-gray-500' />
 
       <nav className='flex flex-col justify-between lg:w-8/12'>
-        <p className='bg-gray-300 bg-opacity-20 hover:bg-opacity-50 duration-100 w-fit py-2 px-1 rounded-2xl mb-4'>
-          <span className='bg-secondary-400 text-gray-900 rounded-xl py-1 px-2 text-sm'>Kritik dan Saran</span>
-          <span className='mx-2 text-xs'>Bantu kami meningkatkan layanan</span>
-          <span className='hidden md:block underline mr-2'>Isi survey</span>
-        </p>
+        <button className='flex items-center bg-gray-300 bg-opacity-20 hover:bg-opacity-50 duration-100 w-fit p-1 rounded-2xl mb-4'>
+          <p className='bg-secondary-400 text-gray-900 rounded-xl py-1 px-2 text-sm'>Kritik dan Saran</p>
+          <p className='hidden md:block mx-2'>Bantu kami meningkatkan layanan digital Kemlu</p>
+          <p className='hidden md:block underline mr-2'>Isi survey</p>
+        </button>
         <div className='flex flex-wrap md:flex-nowrap w-full justify-between gap-6'>
           {/* NAVIGATION */}
           { Routes.filter(route => route.children.length > 0).map((route, index) => (

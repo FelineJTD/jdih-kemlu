@@ -102,7 +102,11 @@ export default function Home() {
       </Head>
 
       <main>
-
+        {/* KRISAR BUTTON */}
+        <button className={`${showKrisarButton? 'opacity-100' : 'opacity-0'} flex fixed bg-secondary-300 top-[50vh] right-0 z-20 text-gray-900 p-2 duration-300 rotate-90 origin-top-right rounded-b-sm`}>
+          <p className='un hover:decoration-neutral-900 mr-2'><b>Kritik dan Saran</b></p>
+          <p>★</p>
+        </button>
 
         {/* MAIN HERO SECTION */}
         <section className='bg-[url("/images/homepage/img-background-hero.png")] lg:h-[calc(100vh-60px)] bg-cover bg-center bg-no-repeat relative text-white text-center'>
@@ -159,7 +163,7 @@ export default function Home() {
 
         {/* AKSES CEPAT */}
         <section className='defaultPadding'>
-          <Animate before='opacity-0 translate-y-4' after='opacity-100 translate-y-0' className='duration-300'>
+          <Animate before='opacity-0 translate-y-4' after='opacity-100 translate-y-0' className='duration-300 relative z-30'>
             <h2 className='uppercase text-center mb-10'>Akses Cepat</h2>
           </Animate>
           <div className='grid grid-cols-1 md:grid-cols-3 justify-between gap-4'>
@@ -183,7 +187,7 @@ export default function Home() {
           {/* overlay */}
           <div className='absolute top-0 left-0 w-full h-full bg-primary-700/75 z-0' aria-hidden />
           {/* content */}
-          <Animate before='opacity-0 translate-y-4' after='opacity-100 translate-y-0' className='duration-300 relative z-10'>
+          <Animate before='opacity-0 translate-y-4' after='opacity-100 translate-y-0' className='duration-300 relative z-30'>
             <h2 className='uppercase text-center mb-10'>Tema Dokumen</h2>
           </Animate>
           <div className='grid grid-cols-2 md:grid-cols-4 gap-4 relative z-10'>
@@ -209,7 +213,7 @@ export default function Home() {
 
         {/* TAUTAN EKSTERNAL */}
         <section className='defaultPadding bg-primary-700 text-white'>
-          <Animate before='opacity-0 translate-y-4' after='opacity-100 translate-y-0' className='duration-300'>
+          <Animate before='opacity-0 translate-y-4' after='opacity-100 translate-y-0' className='duration-300 relative z-30'>
             <h2 className='uppercase text-center mb-10'>Tautan Eksternal</h2>
           </Animate>
           <div className='flex flex-col md:flex-row justify-between gap-4'>

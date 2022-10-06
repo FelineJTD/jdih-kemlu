@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 // DATA
 import { Routes, Links } from '../config/cfg-routes';
 
@@ -7,9 +9,15 @@ import Link from 'next/link'
 import IconTwitter from '../assets/icons/social/icon-twitter';
 import IconInstagram from '../assets/icons/social/icon-instagram';
 import IconFacebook from '../assets/icons/social/icon-facebook';
+import ComponentKrisarModal from './cmp-krisar-modal';
 
 export default function Footer() {
+  const [isVisible, setIsVisible] = useState(false);
+
   return (
+    <>
+    <ComponentKrisarModal isVisible={isVisible} setIsVisible={setIsVisible} />
+
     <footer className='flex flex-col lg:flex-row bg-primary-700 text-white defaultPadding w-full selection:bg-secondary-400 selection:text-primary-500 h-fit relative'>
       <div className='w-full lg:w-3/12'>
         <div className='flex lg:flex-col gap-4'>
@@ -20,7 +28,7 @@ export default function Footer() {
           </h3>
         </div>
         <address className='w-full md:w-[12rem] mb-16 md:mb-0'>
-          <div className='flex space-x-2 lg:flex-col items-start'>
+          <div className='flex-col items-start'>
             <Image src='/icons/icon-map.svg' alt='Alamat' width={16} height={16} />
             <a 
               href='https://goo.gl/maps/HaHrxxxT6kNnSRfN6' 
@@ -32,7 +40,7 @@ export default function Footer() {
               <p className='mb-6'>Jalan Taman Pejambon No. 6</p>
             </a>
           </div>
-          <div className='flex space-x-2 lg:flex-col items-start'>
+          <div className='lg:flex-col items-start'>
             <Image src='/icons/icon-mail.svg' alt='Kontak' width={16} height={16} />
             <div>
               <a 
@@ -76,10 +84,10 @@ export default function Footer() {
       <div className='hidden lg:block flex-grow min-h-full mx-auto max-w-[1px] bg-gray-500' />
 
       <nav className='flex flex-col justify-between lg:w-8/12'>
-        <button className='flex items-center bg-gray-300 bg-opacity-20 hover:bg-opacity-50 duration-100 w-fit p-1 rounded-2xl mb-4'>
+        <button className='flex items-center bg-gray-300 bg-opacity-20 hover:bg-opacity-50 duration-100 w-fit p-1 rounded-2xl mb-4' onClick={() => setIsVisible(true)}>
           <p className='bg-secondary-400 text-gray-900 rounded-xl py-1 px-2 text-sm'>Kritik dan Saran</p>
-          <p className='hidden md:block mx-2'>Bantu kami meningkatkan layanan digital Kemlu</p>
-          <p className='hidden md:block underline mr-2'>Isi survey</p>
+          <p className='hidden md:block ml-2'>Bantu kami meningkatkan layanan digital Kemlu</p>
+          <p className='underline mx-2'>Isi survey</p>
         </button>
         <div className='flex flex-wrap md:flex-nowrap w-full justify-between gap-6'>
           {/* NAVIGATION */}
@@ -122,5 +130,6 @@ export default function Footer() {
 
       <p className='mt-12 lg:hidden'>© Hak Cipta Kementerian Luar Negeri RI 2021</p>
     </footer>
+    </>
   )
 }

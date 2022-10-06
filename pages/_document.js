@@ -6,6 +6,7 @@ export default function Document() {
       <Head>
         <meta charSet='utf-8' />
         <meta name='theme-color' content='#0D265A' />
+        <link rel="icon" href="/logo-jdih.png" />
         {/* FONTS */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />

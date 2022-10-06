@@ -84,7 +84,6 @@ export default function Home() {
       <Head>
         <title>JDIH Kemlu</title>
         <meta name="description" content="JDIH Kemlu" />
-        <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main>

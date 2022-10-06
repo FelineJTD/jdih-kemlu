@@ -14,7 +14,7 @@ export default function Animate(props) {
 
     // on unmount
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    return () => observer.unobserve(domRef.current);
+    // return () => observer.unobserve(domRef.current);
   }, []);
 
   return (

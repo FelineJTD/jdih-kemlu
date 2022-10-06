@@ -124,10 +124,10 @@ export default function Navbar() {
         </div>
 
         <div className='flex'>
-          <button className='unWhite' onClick={() => setIsLoginModalOpen(true)}>
+          <button className='hidden md:block unWhite' onClick={() => setIsLoginModalOpen(true)}>
             Masuk
           </button>
-          <button className='buttonSecondary ml-3'>
+          <button className='hidden md:block buttonSecondary ml-3'>
             Pencarian
           </button>
           <img src='/navbar/ic-arrow-left.svg' alt='Navbar menu button' id='toggle' onClick={toggleMobileNav} className='lg:hidden ml-3 relative cursor-pointer duration-300' />

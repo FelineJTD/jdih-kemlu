@@ -96,14 +96,14 @@ export default function Home() {
           <div className='absolute top-0 left-0 w-full h-full bg-gradient-to-b from-primary-700/90 to-primary-700/40 z-0' aria-hidden />
           {/* content */}
           <div className='defaultPadding h-full w-full flex flex-col items-center justify-center relative'>
-            <h1 className='uppercase mb-12'>
+            <h1 className='text-xl md:text-4xl uppercase mb-12'>
               Jaringan Dokumentasi dan Informasi Hukum<br />
               Kementrian Luar Negeri
             </h1>
             <p className='text-neutral-200 mb-2'>Temukan Informasi dan Dokumentasi Hukum Terkini dari Kementrian Luar Negeri</p>
-            <form className='relative flex w-full mb-7'>
-              <span class="sr-only">Search</span>
-              <span class="absolute inset-y-0 left-0 flex items-center pl-3">
+            <form className='relative flex mb-7 md:w-full'>
+              <span className="sr-only">Search</span>
+              <span className="absolute inset-y-0 left-0 flex items-center pl-3">
                 <Image src='/icons/icon-search.svg' width={20} height={20} alt='icon search' />
               </span>
               <input 
@@ -111,13 +111,13 @@ export default function Home() {
                 placeholder='Ketik kata kunci pencarian'
                 className='placeholder:italic placeholder:text-neutral-500 h-full flex-grow rounded-l-md pl-10 py-2 pr-3 text-neutral-900' 
               />
-              <button className='flex-grow-0 whitespace-nowrap py-2 px-3 rounded-r-md bg-secondary-300 text-neutral-900 enabled:hover:bg-secondary-500 duration-100'>Cari Dokumen</button>
+              <button className='flex-grow-0 whitespace-nowrap py-2 px-3 rounded-r-md bg-secondary-300 text-neutral-900 enabled:hover:bg-secondary-500 duration-100'>Cari</button>
             </form>
             <p className='font-medium mb-2 text-neutral-100'>Pencarian Populer Dokumen Hukum JDIH</p>
-            <div className='flex items-center justify-center gap-4'>
+            <div className='flex items-center justify-start md:justify-center gap-4 overflow-x-auto w-full'>
               { HasilPencarian.map((item, index) => (
                 <Link href='' key={index}>
-                  <a key={index} className='flex gap-4 items-center bg-white hover:bg-neutral-200 duration-100 text-neutral-700 px-4 py-2 rounded-md'>
+                  <a key={index} className='flex gap-4 items-center justify-start bg-white hover:bg-neutral-200 duration-100 text-neutral-700 px-4 py-2 rounded-md whitespace-nowrap'>
                     <b>{item}</b>
                     <Image src='/icons/icon-open-in-new-tab.svg' width={16} height={16} alt='icon open' />
                   </a>

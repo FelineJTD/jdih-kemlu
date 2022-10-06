@@ -1,11 +1,11 @@
 import Head from 'next/head'
 import Template from '../components/layout-template'
 
-export default function Dokumen() {
+export default function TentangKami() {
   const paths = [
     {
-      name: 'Dokumen Hukum',
-      link: '/dokumen'
+      name: 'Tentang Kami',
+      link: '/tentang-kami'
     }
   ]
   return (
@@ -17,8 +17,8 @@ export default function Dokumen() {
 
       <main>
         <Template
-          title='Dokumen Hukum'
-          subtitle='Himpunan Dokumen Hukum di JDIH Kementrian Luar Negeri'
+          title='Tentang Kami'
+          subtitle='Deskripsi Singkat Seputar JDIH Kementrian Luar Negeri'
           img='https://picsum.photos/200/300'
           alt='Gambar Dokumen Hukum'
           paths={paths}

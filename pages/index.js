@@ -114,7 +114,7 @@ export default function Home() {
               <button className='flex-grow-0 whitespace-nowrap py-2 px-3 rounded-r-md bg-secondary-300 text-neutral-900 enabled:hover:bg-secondary-500 duration-100'>Cari</button>
             </form>
             <p className='font-medium mb-2 text-neutral-100'>Pencarian Populer Dokumen Hukum JDIH</p>
-            <div className='flex items-center justify-start gap-4 overflow-x-auto w-full'>
+            <div className='flex items-center justify-start md:justify-center gap-4 overflow-x-auto w-full'>
               { HasilPencarian.map((item, index) => (
                 <Link href='' key={index}>
                   <a key={index} className='flex gap-4 items-center justify-start bg-white hover:bg-neutral-200 duration-100 text-neutral-700 px-4 py-2 rounded-md whitespace-nowrap'>

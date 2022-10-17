@@ -25,13 +25,13 @@ body::-webkit-scrollbar-thumb {
   background-color: #1B3E79;
 }
 
-h1, h2 {
+h1, h2, thead {
   font-family: 'Josefin Sans', sans-serif;
   font-style: normal;
   font-weight: 500;
 }
 
-h3, h4, h5, h6, a, p {
+h3, h4, h5, h6, a, p, tbody {
   font-family: 'Inter', sans-serif;
   font-style: normal;
   font-weight: 400;

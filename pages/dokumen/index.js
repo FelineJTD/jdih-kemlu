@@ -144,27 +144,31 @@ export default function Dokumen() {
                 </select>
               </div>
 
-              <table className='text-gray-800'>
+              <table className='text-gray-800 rounded-lg border-b-2 border-primary-700'>
                 <thead className='border-b-2 border-primary-600 text-left'>
                   <tr>
+                    <th className='pr-4 md:hidden' />
                     <th className='pr-4'>No</th>
                     <th className='pr-4'>Judul Dokumen</th>
-                    <th className='pr-4 hidden md:block'>Jenis</th>
-                    <th className='pr-4 hidden md:block'>Tema</th>
-                    <th className='pr-4 hidden md:block'>Tahun</th>
+                    <th className='pr-4 hidden md:table-cell'>Jenis</th>
+                    <th className='pr-4 hidden md:table-cell'>Tema</th>
+                    <th className='pr-4 hidden md:table-cell'>Tahun</th>
                     <th className='pr-4'>Status</th>
-                    <th className='hidden md:block'>Lihat Detail</th>
+                    <th className='hidden md:table-cell'>Lihat Detail</th>
                   </tr>
                 </thead>
                 <tbody className='odd:bg-neutral-100'>
                   { dokumens.map((dokumen, index) => {
                       return (
                         <tr key={index} className='odd:bg-neutral-50'>
+                          <td className='pl-2 pr-4 py-4 md:hidden'>
+                            <button className='bg-primary-600 rounded-full w-6 h-6 text-white'>+</button>
+                          </td>
                           <td className='pr-4 py-4'>{index + 1}</td>
                           <td className='pr-4 py-4'>{dokumen.title}</td>
-                          <td className='pr-4 py-4 hidden md:block'>{dokumen.jenis}</td>
-                          <td className='pr-4 py-4 hidden md:block'>{dokumen.tema}</td>
-                          <td className='pr-4 py-4 hidden md:block'>{dokumen.tahun}</td>
+                          <td className='pr-4 py-4 hidden md:table-cell'>{dokumen.jenis}</td>
+                          <td className='pr-4 py-4 hidden md:table-cell'>{dokumen.tema}</td>
+                          <td className='pr-4 py-4 hidden md:table-cell'>{dokumen.tahun}</td>
                           <td className='pr-4 py-4'>
                             <ul>
                               { dokumen.status.map((item, index) => {
@@ -179,7 +183,7 @@ export default function Dokumen() {
                               }) }
                             </ul>
                           </td>
-                          <td className='hidden md:block'>
+                          <td className='hidden md:table-cell'>
                             <a href={dokumen.link} target='_blank' rel='noreferrer' className='text-primary-500 hover:text-primary-700 duration-100'>Lihat</a>
                           </td>
                         </tr>

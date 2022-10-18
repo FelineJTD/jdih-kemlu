@@ -133,6 +133,10 @@ a, p, button {
   @apply button text-neutral-400 enabled:hover:bg-neutral-100;
 }
 
+.buttonFilter {
+  @apply border border-gray-300 bg-neutral-50 rounded-md p-1;
+}
+
 /* TAG */
 .tag {
   @apply rounded-2xl px-3 py-1;

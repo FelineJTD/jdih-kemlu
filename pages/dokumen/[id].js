@@ -124,8 +124,8 @@ export default function DetailDokumen() {
                 <div className='w-full h-96' />
               </div>
 
-              <div className='bg-neutral-50 rounded-lg'>      
-                <div className='px-3'>
+              <div className='bg-neutral-50 rounded-lg px-3'> 
+                <h3 className='text-lg font-josefin-sans mb-4'>Dokumen Lainnya</h3>     
                 {
                   dokumens.slice(0, 5).map((dokumen, index) => {
                     return (
@@ -136,13 +136,12 @@ export default function DetailDokumen() {
                     )
                   })
                 }
-                </div>
               </div>
             </aside>
 
             {/* TABLE */}
             <section className='w-full lg:w-3/4 flex flex-col'>
-              <h3 className='border-b border-primary-700'>Informasi Detail Dokumen</h3>
+              <h3 className='border-b border-primary-700 text-xl font-josefin-sans pb-4'>Informasi Detail Dokumen</h3>
               <table className='text-gray-800 block'>
                 <thead className='text-left block'>
                   <tr className='block float-left'>
@@ -194,9 +193,9 @@ export default function DetailDokumen() {
                   </tr>
                 </tbody>
               </table>
-              <div className='flex flex-col lg:flex-row justify-center mt-8 items-center'>
-                <button>Baca</button>
-                <button>Unduh</button>
+              <div className='flex flex-col lg:flex-row justify-center items-center gap-8'>
+                <button className='button-secondary'>Baca</button>
+                <button className='button-secondary'>Unduh</button>
               </div>
             </section>
           </div>

@@ -141,7 +141,7 @@ export default function DetailDokumen() {
 
             {/* TABLE */}
             <section className='w-full lg:w-3/4 flex flex-col'>
-              <h3 className='border-b border-primary-700 text-xl font-josefin-sans pb-4'>Informasi Detail Dokumen</h3>
+              <h3 className='border-b-2 border-primary-600 text-xl font-josefin-sans pb-4'>Informasi Detail Dokumen</h3>
               <table className='text-gray-800 block'>
                 <thead className='text-left block'>
                   <tr className='block float-left'>
@@ -194,8 +194,8 @@ export default function DetailDokumen() {
                 </tbody>
               </table>
               <div className='flex flex-col lg:flex-row justify-center items-center gap-8'>
-                <button className='button-secondary'>Baca</button>
-                <button className='button-secondary'>Unduh</button>
+                <button className='buttonSecondary'>Baca</button>
+                <button className='buttonSecondary'>Unduh</button>
               </div>
             </section>
           </div>
